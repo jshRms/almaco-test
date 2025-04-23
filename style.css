@@ -102,11 +102,30 @@ nav {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #4d4d4d;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
+  color: #000;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/Hero-image.png") no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 100%);
+  z-index: -1;
 }
 .hero h1 {
   font-size: 4rem;
